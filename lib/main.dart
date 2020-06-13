@@ -31,13 +31,13 @@ class _stocksState extends State<stocks> {
     String query;
 
     const witURL = 'https://api.wit.ai/message?v=20200613&q=';
-    const witHeader = 'Bearer UW3JCZIFHB2KUNJMMQYD4XUEKPMS3LOO';
+    const witHeader = 'Bearer M27KSEQWNSRCSBU7D4X73ZV3QQ4NBSNE';
     const coinAPIURL = 'https://rest.coinapi.io/v1/exchangerate/';
-    const coinAPIKey = '3FD48454-A792-4B54-847E-67CEB07C3487';
+    const coinAPIKey = '9DE7FB79-ABAD-48A0-9462-C823BC6378A7';
     var rateString = '';
 
 
-    changeText(crypto, fiat, currentRate) async{
+    changeText(crypto, fiat, currentRate) {
       rateString = 'The current rate of $crypto in $fiat is $currentRate.';
       resultTextController.text = rateString;
       print(rateString);
@@ -71,7 +71,7 @@ class _stocksState extends State<stocks> {
       );
 
       if(witResponse.statusCode == 200) {
-        //print(witResponse.body);
+        print(witResponse.body);
         String intentData = witResponse.body;
 
         var cryptoCurrency = jsonDecode(intentData)['entities']['quotes:crypto'][0]['value'];
