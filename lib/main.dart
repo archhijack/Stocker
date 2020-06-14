@@ -86,6 +86,7 @@ class _stocksState extends State<stocks> {
       }
     }
 
+
     return MaterialApp(
       theme: ThemeData.light().copyWith(
         primaryColor: Colors.lightBlue,

@@ -1,16 +1,31 @@
 # stocker
 
-An App to know crypto rates
+An App to know crypto rates.
+Built using Flutter, Dart, Wit.ai, CoinAPI.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+- Type in a query as you would to to convert crypto to fiat currency or vice versa.
+- Stocker uses wit.ai to recognize the crypto and the fiat currency.
+- The trained ML model then passes the two string values.
+- These values are further passed to CoinAPI to get the rates.
+- The rates are then displayed to the user.
 
-A few resources to get you started if this is your first Flutter project:
+### A Few Things To Note
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- DO NOT input any symbols.
+- DO NOT input any numbers. Stocker can only tell exchange rates.
+- Only 100 requests per day can be made as CoinAPI supports only 100 requests per day.
+- Speech to Text support coming soon.
+- Native iOS app built using Swift coming soon.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### Examples
+
+- Convert BTC to USD
+- What is the value of MCO in GBP
+- How is INR doing against ETH
+
+##### API Calls
+
+Wit.ai api call has been made in the function getIntent() in main.dart.
+    CoinAPI call has been made in the function getValue() in main.dart.
